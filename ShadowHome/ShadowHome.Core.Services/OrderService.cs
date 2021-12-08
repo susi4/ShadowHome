@@ -4,7 +4,9 @@ using ShadowHome.Core.Repository;
 using System.Collections.Generic;
 namespace ShadowHome.Core.Services
 {
+#pragma warning disable CS0436 
     public class OrderService : BaseService<Order>, IOrderService
+#pragma warning restore CS0436 // 类型与导入类型冲突
     {
         public IBaseRepository<User> userRepository;
         //public ISimpleClient<OrderTest> simpleClient;
