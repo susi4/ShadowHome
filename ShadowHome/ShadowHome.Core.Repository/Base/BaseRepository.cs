@@ -26,7 +26,6 @@ namespace ShadowHome.Core.Repository
 
         public BaseRepository(ConnectionConfig ConnectionConfig)
         {
-            //测试更改
             this.ConnectionConfig = ConnectionConfig;
         }
         public ISqlSugarClient Context
