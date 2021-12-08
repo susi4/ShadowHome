@@ -18,12 +18,15 @@ namespace ShadowHome.Core.Repository
             DbType = (DbType)Convert.ToInt32(ConfigurationManager.Configuration["DbInformation:DbType"]),
             IsAutoCloseConnection = true//自动释放
         };
+
         public BaseRepository()
         {
 
         }
+
         public BaseRepository(ConnectionConfig ConnectionConfig)
         {
+            //测试更改
             this.ConnectionConfig = ConnectionConfig;
         }
         public ISqlSugarClient Context
