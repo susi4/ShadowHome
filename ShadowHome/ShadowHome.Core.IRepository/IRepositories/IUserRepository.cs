@@ -1,17 +1,17 @@
 ﻿using ShadowHome.Core.Model;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShadowHome.Core.IServices
+namespace ShadowHome.Core.IRepository.IRepositories
 {
-    public interface IUserService
+
+    public interface IUserRepository :ISimpleClient<User>, ISugarRepository
     {
-        Task<IEnumerable<User>> GetList();
 
 
-        Task<IEnumerable<User>> GetUser();
     }
 }

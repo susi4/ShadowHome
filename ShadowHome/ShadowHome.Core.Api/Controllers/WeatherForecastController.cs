@@ -15,11 +15,11 @@ namespace ShadowHome.Core.Api.Controllers
     {
         private readonly ILogger<WeatherForecastController> _logger;
 
-        private readonly IOrderService orderService;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IOrderService orderService)
+        private readonly IUserService _userService;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUserService userService)
         {
             _logger = logger;
-            this.orderService = orderService;
+            _userService = userService;
         }
 
         [HttpGet("GetOrder")]
@@ -36,10 +36,9 @@ namespace ShadowHome.Core.Api.Controllers
 
 
         [HttpGet("GetUser")]
-
-        public IEnumerable<User> GetUser()
+        public async Task<IActionResult> GetUser()
         {
-            return orderService.GetUser();
+            return Ok(await _userService.GetUser());
         }
     }
 }
