@@ -17,6 +17,7 @@ namespace ShadowHome.Core.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
                 });
     }
 }

@@ -12,11 +12,11 @@ namespace ShadowHome.Core.Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
-    {      
+    {
         private readonly ILogger<WeatherForecastController> _logger;
 
         private readonly IOrderService orderService;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IOrderService orderService )
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IOrderService orderService)
         {
             _logger = logger;
             this.orderService = orderService;
@@ -25,7 +25,13 @@ namespace ShadowHome.Core.Api.Controllers
         [HttpGet("GetOrder")]
         public IEnumerable<Order> Get()
         {
-            return orderService.GetList();
+
+            return new List<Order> { new Order {
+
+                OrderId=1
+
+            } };
+            //return orderService.GetList();
         }
 
 
