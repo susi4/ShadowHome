@@ -13,9 +13,9 @@ namespace ShadowHome.Core.Repository
     {
         public ConnectionConfig ConnectionConfig { get; set; } = new ConnectionConfig()
         {
-            ConfigId = ConfigurationManager.Configuration["DbInformation:ConfigId"],
-            ConnectionString = ConfigurationManager.Configuration["DbInformation:ConnectionString"],
-            DbType = (DbType)Convert.ToInt32(ConfigurationManager.Configuration["DbInformation:DbType"]),
+            //ConfigId = ConfigurationManager.Configuration["DbInformation:ConfigId"],
+            //ConnectionString = ConfigurationManager.Configuration["DbInformation:ConnectionString"],
+            //DbType = (DbType)Convert.ToInt32(ConfigurationManager.Configuration["DbInformation:DbType"]),
             IsAutoCloseConnection = true//自动释放
         };
 

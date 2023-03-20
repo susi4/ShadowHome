@@ -23,6 +23,7 @@ namespace ShadowHome.Core.Api
         {
             Configuration = configuration;
 
+
           //var a =  ConfigurationManager.Configuration["DbInformation:ConnectionString"];
         }
 
@@ -31,7 +32,7 @@ namespace ShadowHome.Core.Api
         //This method gets called by the runtime.Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Configure<IConfiguration>(Configuration);  
             services.AddControllers();
         }
 
@@ -87,7 +88,6 @@ namespace ShadowHome.Core.Api
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
