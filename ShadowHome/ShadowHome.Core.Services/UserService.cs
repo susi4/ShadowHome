@@ -20,13 +20,13 @@ namespace ShadowHome.Core.Services
             ////userRepository = baseRepository.ChangeRepository<BaseRepository<User>>();
         }
 
-        public async Task<IEnumerable<User>> GetList()
+        public async Task<IEnumerable<UserModel>> GetList()
         {
             await _userRepository.AsTenant().BeginTranAsync();
             return await _userRepository.AsQueryable().Where(p => p.ManagerId == 1).ToListAsync();
         }
 
-        public Task<IEnumerable<User>> GetUser()
+        public Task<IEnumerable<UserModel>> GetUser()
         {
             throw new System.NotImplementedException();
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ShadowHome.Core.IRepository.IRepositories
 {
 
-    public interface IUserRepository :ISimpleClient<User>, ISugarRepository
+    public interface IUserRepository :ISimpleClient<UserModel>, ISugarRepository
     {
 
 

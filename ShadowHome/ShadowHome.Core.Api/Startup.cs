@@ -1,4 +1,5 @@
 using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,6 +40,7 @@ namespace ShadowHome.Core.Api
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
+
             //builder.RegisterModule(new AutofacModuleRegister());
             builder.RegisterModule<AutofacPropertityModuleReg>();
         }

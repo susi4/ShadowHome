@@ -5,12 +5,12 @@ namespace ShadowHome.Core.Model
     /// <summary>
     /// 用户_用户表
     /// </summary>
-    public class User
+    public class UserModel
     {
         /// <summary>
         /// 用户_用户表
         /// </summary>
-        public User()
+        public UserModel()
         {
         }
 
