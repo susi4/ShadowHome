@@ -1,8 +1,9 @@
 ﻿using ShadowHome.Core.IRepository.IRepositories;
 using ShadowHome.Core.IServices;
 using ShadowHome.Core.Model;
-using ShadowHome.Core.Repository.Repository;
+using ShadowHome.Core.Repository;
 using SqlSugar;
+using SqlSugar.Extensions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,19 +11,21 @@ namespace ShadowHome.Core.Services
 {
     public class UserService : IUserService
     {
-        public IUserRepository _userRepository;
+        public UserRepository _userRepository;
 
-        public UserService(IUserRepository userRepository)
+        ISugarUnitOfWork<DbContext> _sugarUnitOfWork;
+
+        public UserService(ISugarUnitOfWork<DbContext> sugarUnitOfWork)
         {
-            _userRepository = userRepository;
-            ////SimpleClient = baseRepository.SimpleClient;
-            //////simpleClient = baseRepository.SimpleClient.Change<OrderTest>();
-            ////userRepository = baseRepository.ChangeRepository<BaseRepository<User>>();
+            _sugarUnitOfWork = sugarUnitOfWork;
+
         }
 
         public async Task<IEnumerable<UserModel>> GetList()
         {
-            await _userRepository.AsTenant().BeginTranAsync();
+            var a = _sugarUnitOfWork.CreateContext(true);
+
+            //await a.OrderModel..BeginTranAsync();
             return await _userRepository.AsQueryable().Where(p => p.ManagerId == 1).ToListAsync();
         }
 
