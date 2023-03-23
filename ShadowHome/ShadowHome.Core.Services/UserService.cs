@@ -1,4 +1,5 @@
-﻿using ShadowHome.Core.IRepository.IRepositories;
+﻿using ShadowHome.Core.Common.AutoDI;
+using ShadowHome.Core.IRepository.IRepositories;
 using ShadowHome.Core.IServices;
 using ShadowHome.Core.Model;
 using ShadowHome.Core.Repository;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShadowHome.Core.Services
 {
+    [Service]
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;

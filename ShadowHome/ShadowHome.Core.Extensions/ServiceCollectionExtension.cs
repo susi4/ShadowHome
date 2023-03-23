@@ -1,10 +1,18 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.DependencyModel;
+using ShadowHome.Core.Common;
 using ShadowHome.Core.Common.Config;
 using ShadowHome.Core.Repository;
 using SqlSugar;
 using SqlSugar.IOC;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.Loader;
 
 namespace ShadowHome.Core.Extensions
 {
@@ -27,24 +35,17 @@ namespace ShadowHome.Core.Extensions
             services.AddSingleton(context);
         }
 
-        public static void AddSqlSugarIocSetup(this IServiceCollection services, IConfiguration configuration,object target)
+        public static void AddSqlSugarIocSetup(this IServiceCollection services, IConfiguration configuration)
         {
             var options = configuration.GetSection(defaultKey).Get<DBOptions>();
             services.AddSqlSugar(new IocConfig()
             {
                 ConnectionString = options.ConnectionString,
                 DbType = options.DbType.ToEnum(IocDbType.Oracle),
-                IsAutoCloseConnection = options.IsAutoCloseConnection   
+                IsAutoCloseConnection = options.IsAutoCloseConnection
             });
-
-            //注入Controller层
-            services.AddIoc(target, "ShadowHome.Core.Api", it => it.Name.Contains("Controller"));
-
-            //注入Service层
-            services.AddIoc(target, "ShadowHome.Core.Services", it => it.Name.Contains("Services"));
-
-            //注入Repository层
-            services.AddIoc(target, "ShadowHome.Core.Repository", it => it.Name.Contains("Repository"));
+            IIocExtension iocExtension = new IocExtension();
+            iocExtension.Register(services);
         }
     }
 }
