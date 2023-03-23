@@ -55,7 +55,6 @@ namespace ShadowHome.Core.Api
             }
 
             app.UseRouting();
-
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

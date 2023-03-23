@@ -22,6 +22,10 @@ namespace ShadowHome.Core.Api.Controllers
             _userService = userService;
         }
 
+        /// <summary>
+        /// 这是一个接口
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("GetOrder")]
         public IEnumerable<Order> Get()
         {
