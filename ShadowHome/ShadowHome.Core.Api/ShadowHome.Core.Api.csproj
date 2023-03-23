@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShadowHome.Core.Extensions\ShadowHome.Core.Extensions.csproj" />
-    <ProjectReference Include="..\ShadowHome.Core.IServices\ShadowHome.Core.IServices.csproj" />
     <ProjectReference Include="..\ShadowHome.Core.Services\ShadowHome.Core.Services.csproj" />
   </ItemGroup>
 

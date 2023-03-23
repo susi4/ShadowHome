@@ -33,17 +33,18 @@ namespace ShadowHome.Core.Api
         //This method gets called by the runtime.Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSqlsugarSetup(Configuration);
+            //services.AddSqlsugarSetup(Configuration);
+            services.AddSqlSugarIocSetup(Configuration, this);
             services.AddControllers();
         }
 
 
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
 
-            //builder.RegisterModule(new AutofacModuleRegister());
-            builder.RegisterModule<AutofacPropertityModuleReg>();
-        }
+        //    //builder.RegisterModule(new AutofacModuleRegister());
+        //    builder.RegisterModule<AutofacPropertityModuleReg>();
+        //}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

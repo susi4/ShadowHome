@@ -11,22 +11,18 @@ namespace ShadowHome.Core.Services
 {
     public class UserService : IUserService
     {
-        public UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        ISugarUnitOfWork<DbContext> _sugarUnitOfWork;
-
-        public UserService(ISugarUnitOfWork<DbContext> sugarUnitOfWork)
+        public UserService(IUserRepository userRepository)
         {
-            _sugarUnitOfWork = sugarUnitOfWork;
+            _userRepository = userRepository;
 
         }
 
         public async Task<IEnumerable<UserModel>> GetList()
         {
-            var a = _sugarUnitOfWork.CreateContext(true);
+            return null;
 
-            //await a.OrderModel..BeginTranAsync();
-            return await _userRepository.AsQueryable().Where(p => p.ManagerId == 1).ToListAsync();
         }
 
         public Task<IEnumerable<UserModel>> GetUser()

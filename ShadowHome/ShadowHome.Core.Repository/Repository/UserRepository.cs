@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ShadowHome.Core.Repository
 {
-    public class UserRepository : Repository<UserModel>
+    public class UserRepository : SimpleClient<UserModel>, IUserRepository
     {
 
 
