@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,6 +17,7 @@ using ShadowHome.Core.Extensions;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -36,9 +38,7 @@ namespace ShadowHome.Core.Api
             //services.AddSqlsugarSetup(Configuration);
             services.AddSqlSugarIocSetup(Configuration);
             services.AddControllers();
-        }
-
-
+        }    
         //public void ConfigureContainer(ContainerBuilder builder)
         //{
 
