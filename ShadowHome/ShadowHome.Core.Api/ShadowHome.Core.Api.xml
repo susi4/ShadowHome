@@ -10,5 +10,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:ShadowHome.Core.Api.Test.Get">
+            <summary>
+            测试接口
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

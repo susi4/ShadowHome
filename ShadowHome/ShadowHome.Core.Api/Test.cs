@@ -16,6 +16,10 @@ namespace ShadowHome.Core.Api
 
         public string Summary { get; set; }
 
+        /// <summary>
+        /// ²âÊÔ½Ó¿Ú
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public string Get()
         {
