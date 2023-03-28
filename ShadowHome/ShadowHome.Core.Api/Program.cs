@@ -13,7 +13,8 @@ namespace ShadowHome.Core.Api
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwagger();
+            builder.Services.AddConfigureVersioning();
             builder.Services.AddSqlSugarIocSetup(builder.Configuration);
             var app = builder.Build();
             if (app.Environment.IsDevelopment())
@@ -21,6 +22,7 @@ namespace ShadowHome.Core.Api
                 app.UseDeveloperExceptionPage();
             }
             app.UseRouting();
+            app.UseSwaggerUI();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

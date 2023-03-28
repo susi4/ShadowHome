@@ -27,9 +27,9 @@ namespace ShadowHome.Core.Services
 
         }
 
-        public Task<IEnumerable<UserModel>> GetUser()
+        public async Task<IEnumerable<UserModel>> GetUser()
         {
-            throw new System.NotImplementedException();
+            return await _userRepository.GetListAsync(p=>p.UserId==1);
         }
     }
 }
