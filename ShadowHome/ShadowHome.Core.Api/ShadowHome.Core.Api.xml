@@ -4,11 +4,21 @@
         <name>ShadowHome.Core.Api</name>
     </assembly>
     <members>
-        <member name="M:ShadowHome.Core.Api.Controllers.WeatherForecastController.Get">
+        <member name="M:ShadowHome.Core.Api.Controllers.WeatherForecastController.Get(ShadowHome.Core.Api.Dto.CreateUserDto)">
             <summary>
             这是一个接口
             </summary>
             <returns></returns>
+        </member>
+        <member name="P:ShadowHome.Core.Api.Dto.CreateUserDto.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:ShadowHome.Core.Api.Dto.CreateUserDto.Age">
+             <summary>
+            年龄
+             </summary>
         </member>
         <member name="M:ShadowHome.Core.Api.Test.Get">
             <summary>

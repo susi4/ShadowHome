@@ -11,9 +11,15 @@ using System.Threading.Tasks;
 namespace ShadowHome.Core.Repository
 {
     [Repository]
-    public class UserRepository : SimpleClient<UserModel>, IUserRepository
+    public class UserRepository : SimpleClient<YJ_QX_CHUSHENGQXZDModel>, IUserRepository
     {
+        public UserRepository(ISqlSugarClient db) : base(db)
+        {
 
-
+        }
+        public async Task<IEnumerable<YJ_QX_CHUSHENGQXZDModel>> GetCaoZuoRZList()
+        {
+            return await GetListAsync();
+        }
     }
 }

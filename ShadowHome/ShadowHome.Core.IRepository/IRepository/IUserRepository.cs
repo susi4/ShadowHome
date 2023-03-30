@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace ShadowHome.Core.IRepository.IRepositories
 {
 
-    public interface IUserRepository :ISimpleClient<UserModel>, ISugarRepository
+    public interface IUserRepository : ISimpleClient<YJ_QX_CHUSHENGQXZDModel>, ISugarRepository
     {
-
+        Task<IEnumerable<YJ_QX_CHUSHENGQXZDModel>> GetCaoZuoRZList();
 
     }
 }

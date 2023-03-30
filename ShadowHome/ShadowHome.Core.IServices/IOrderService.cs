@@ -9,9 +9,9 @@ namespace ShadowHome.Core.IServices
 {
     public interface IUserService
     {
-        Task<IEnumerable<UserModel>> GetList();
+        Task<IEnumerable<YJ_QX_CHUSHENGQXZDModel>> GetList();
 
 
-        Task<IEnumerable<UserModel>> GetUser();
+        Task<IEnumerable<YJ_QX_CHUSHENGQXZDModel>> GetUser();
     }
 }

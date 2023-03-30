@@ -36,7 +36,7 @@ namespace ShadowHome.Core.Api
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddSqlsugarSetup(Configuration);
-            services.AddSqlSugarIocSetup(Configuration);
+            services.AddSqlSugarIoc(Configuration);
             services.AddControllers();
         }    
         //public void ConfigureContainer(ContainerBuilder builder)
