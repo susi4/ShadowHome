@@ -46,10 +46,9 @@ namespace ShadowHome.Core.Extensions
                        var appServive = s.GetService<IHttpContextAccessor>();
                        //var obj = appServive?.HttpContext?.RequestServices.GetService<Log>();
 
-                       foreach (var par in pars)
-                       {
-                           System.Console.WriteLine(par.Value);
-                       }
+                     
+                           //System.Console.WriteLine(db.Fastest);
+                       
                        System.Console.WriteLine(sql);
                    };
                });
