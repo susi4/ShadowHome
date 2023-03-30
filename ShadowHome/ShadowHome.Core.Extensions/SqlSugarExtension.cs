@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Serilog;
 using ShadowHome.Core.Common.Config;
 using ShadowHome.Core.Common.Helper;
 using ShadowHome.Core.Repository;
@@ -49,14 +48,13 @@ namespace ShadowHome.Core.Extensions
                    db.Aop.OnLogExecuting = (sql, paras) =>
                    {
                        var appServive = service.GetService<IHttpContextAccessor>();
-                       System.Console.WriteLine(appServive.HttpContext.Request.ToString());
+                       //System.Console.WriteLine(appServive.HttpContext.Request.ToString());
                        System.Console.WriteLine(SqlProfiler.ParameterFormat(sql, paras));
                    };
                    db.Aop.OnError = sqlSugarException =>
                    {
                        System.Console.WriteLine(SqlProfiler.ParameterFormat(sqlSugarException.Sql, sqlSugarException.Parametres));
                    };
-
                });
                 return sqlSugar;
             });
