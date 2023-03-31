@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace ShadowHome.Core.Extensions
 {
-    public interface IIocExtension
+    public interface IDependencyInjectionExtension
     {
         void Register(IServiceCollection services, string assemblyName  = "ShadowHome.Core");
     }

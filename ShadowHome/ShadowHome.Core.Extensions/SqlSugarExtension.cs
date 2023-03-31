@@ -58,7 +58,7 @@ namespace ShadowHome.Core.Extensions
                });
                 return sqlSugar;
             });
-            IIocExtension iocExtension = new IocExtension();
+            IDependencyInjectionExtension iocExtension = new DependencyInjectionExtension();
             iocExtension.Register(services);
         }
     }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 namespace ShadowHome.Core.Extensions
 {
-    public class IocExtension : IIocExtension
+    public class DependencyInjectionExtension : IDependencyInjectionExtension
     {
         public void Register(IServiceCollection services, string assemblyName = "ShadowHome.Core")
         {
